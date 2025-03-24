@@ -1,11 +1,9 @@
 import os
 import pandas as pd
 import glob
-import re
 from pathlib import Path
 import logging
 import numpy as np
-import shutil
 from force_sensitive_stopping_task_utils import get_subject_label
 
 def change_columns():

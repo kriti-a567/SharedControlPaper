@@ -1,4 +1,3 @@
-import numpy as np
 import unittest
 from sharedcontrolpaper.force_sensitive_stopping_task_utils import calculate_mean_ssd
 

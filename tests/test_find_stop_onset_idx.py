@@ -1,5 +1,3 @@
-import pandas as pd
-import numpy as np
 import unittest
 from sharedcontrolpaper.force_sensitive_stopping_task_utils import find_stop_onset_idx
 

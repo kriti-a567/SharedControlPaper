@@ -1,6 +1,6 @@
 import numpy as np
 import unittest
-from sharedcontrolpaper.force_sensitive_stopping_task_utils import find_first_non_zero_pressure_timestamp, find_first_full_pressure_timestamp, MIN_PRESSURE, MAX_PRESSURE
+from sharedcontrolpaper.force_sensitive_stopping_task_utils import find_first_non_zero_pressure_timestamp, find_first_full_pressure_timestamp
 
 class TestFindFirstPressureTimestamps(unittest.TestCase):
 

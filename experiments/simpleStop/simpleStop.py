@@ -12,22 +12,16 @@ If you publish work using this script the most relevant publication is:
 """
 
 # --- Import packages ---
-from psychopy import locale_setup
 from psychopy import prefs
 from psychopy import plugins
 plugins.activatePlugins()
 prefs.hardware['audioLib'] = 'ptb'
 prefs.hardware['audioLatencyMode'] = '3'
-from psychopy import sound, gui, visual, core, data, event, logging, clock, colors, layout
-from psychopy.constants import (NOT_STARTED, STARTED, PLAYING, PAUSED,
-                                STOPPED, FINISHED, PRESSED, RELEASED, FOREVER)
+from psychopy import gui, visual, core, data, logging
+from psychopy.constants import (NOT_STARTED, STARTED, FINISHED)
 
-import numpy as np  # whole numpy lib is available, prepend 'np.'
-from numpy import (sin, cos, tan, log, log10, pi, average,
-                   sqrt, std, deg2rad, rad2deg, linspace, asarray)
-from numpy.random import random, randint, normal, shuffle, choice as randchoice
+from numpy.random import random, randint
 import os  # handy system and path functions
-import sys  # to get file system encoding
 
 import psychopy.iohub as io
 from psychopy.hardware import keyboard
@@ -202,7 +196,7 @@ instrStopText = visual.TextStim(win=win, name='instrStopText',
     pos=[0, 0], height=0.025, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
-    depth=0.0);
+    depth=0.0)
 key_resp_2 = keyboard.Keyboard()
 
 # --- Initialize components for Routine "practiceBlockSetup" ---
@@ -216,7 +210,7 @@ fixation = visual.TextStim(win=win, name='fixation',
     pos=[0, 0], height=.15, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
-    depth=0.0);
+    depth=0.0)
 goStim = visual.ImageStim(
     win=win,
     name='goStim', units='pix', 
@@ -249,7 +243,7 @@ text = visual.TextStim(win=win, name='text',
     pos=[0, 0], height=0.05, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
-    depth=-1.0);
+    depth=-1.0)
 
 # --- Initialize components for Routine "blank" ---
 fixation_2 = visual.TextStim(win=win, name='fixation_2',
@@ -258,7 +252,7 @@ fixation_2 = visual.TextStim(win=win, name='fixation_2',
     pos=[0, 0], height=.15, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
-    depth=0.0);
+    depth=0.0)
 
 # --- Initialize components for Routine "endTrial" ---
 
@@ -269,7 +263,7 @@ text_5 = visual.TextStim(win=win, name='text_5',
     pos=[0, 0], height=0.025, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
-    depth=-1.0);
+    depth=-1.0)
 key_resp_3 = keyboard.Keyboard()
 
 # --- Initialize components for Routine "practiceRepeat" ---
@@ -282,7 +276,7 @@ testText = visual.TextStim(win=win, name='testText',
     pos=[0, 0], height=0.025, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
-    depth=-1.0);
+    depth=-1.0)
 # Run 'Begin Experiment' code from code_5
 testBlockCount = 0
 
@@ -297,7 +291,7 @@ fixation = visual.TextStim(win=win, name='fixation',
     pos=[0, 0], height=.15, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
-    depth=0.0);
+    depth=0.0)
 goStim = visual.ImageStim(
     win=win,
     name='goStim', units='pix', 
@@ -323,7 +317,7 @@ fixation_3 = visual.TextStim(win=win, name='fixation_3',
     pos=[0, 0], height=.15, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
-    depth=0.0);
+    depth=0.0)
 
 # --- Initialize components for Routine "ssdChange" ---
 
@@ -334,7 +328,7 @@ text_6 = visual.TextStim(win=win, name='text_6',
     pos=[0, 0], height=0.025, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
-    depth=-1.0);
+    depth=-1.0)
 key_resp_4 = keyboard.Keyboard()
 
 # Create some handy timers
@@ -889,9 +883,9 @@ for thisPracticeBlock in practiceBlocks:
             goResp.keys = None
             # was no response the correct answer?!
             if str(corrGoResp).lower() == 'none':
-               goResp.corr = 1;  # correct non-response
+               goResp.corr = 1  # correct non-response
             else:
-               goResp.corr = 0;  # failed to respond (incorrectly)
+               goResp.corr = 0  # failed to respond (incorrectly)
         # store data for practiceTrials (TrialHandler)
         practiceTrials.addData('goResp.keys',goResp.keys)
         practiceTrials.addData('goResp.corr', goResp.corr)
@@ -1206,7 +1200,6 @@ for thisPracticeBlock in practiceBlocks:
     # update component parameters for each repeat
     # Run 'Begin Routine' code from code_10
     #***************************
-    import numpy as np
     
     if goRTCount > 0:
         goRTFeedback = goCumRT/goRTCount
@@ -1919,9 +1912,9 @@ for thisStopBlock in stopBlocks:
             goResp.keys = None
             # was no response the correct answer?!
             if str(corrGoResp).lower() == 'none':
-               goResp.corr = 1;  # correct non-response
+               goResp.corr = 1  # correct non-response
             else:
-               goResp.corr = 0;  # failed to respond (incorrectly)
+               goResp.corr = 0  # failed to respond (incorrectly)
         # store data for testTrials (TrialHandler)
         testTrials.addData('goResp.keys',goResp.keys)
         testTrials.addData('goResp.corr', goResp.corr)

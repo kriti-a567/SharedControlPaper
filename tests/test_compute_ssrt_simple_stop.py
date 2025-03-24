@@ -40,7 +40,7 @@ class TestComputeSSRT(unittest.TestCase):
         p_respond = 1 #Both stop trials have RTs
         nth_index = int(np.rint(p_respond * 4)) -1 #index 3
         sorted_go_rts = pd.Series([200, 250, 300, 400]).sort_values()
-        nth_rt = sorted_go_rts.iloc[3]
+        nth_rt = sorted_go_rts.iloc[nth_index]
         expected_ssrt = nth_rt - avg_ssd
         self.assertAlmostEqual(ssrt, expected_ssrt, places=2)
 
@@ -57,7 +57,7 @@ class TestComputeSSRT(unittest.TestCase):
         p_respond = 1
         nth_index = int(np.rint(p_respond * 2))-1 #index 1
         sorted_go_rts = pd.Series([250, 1000, 400]).sort_values() #1000 is for the NaN
-        nth_rt = sorted_go_rts.iloc[1]
+        nth_rt = sorted_go_rts.iloc[nth_index]
         expected_ssrt = nth_rt - avg_ssd
         self.assertAlmostEqual(ssrt, expected_ssrt, places=2)
 
@@ -74,7 +74,7 @@ class TestComputeSSRT(unittest.TestCase):
         p_respond = 0
         nth_index = int(np.rint(p_respond * 2))-1 
         sorted_go_rts = pd.Series([250, 300]).sort_values() 
-        nth_rt = sorted_go_rts.iloc[0]
+        nth_rt = sorted_go_rts.iloc[nth_index]
         expected_ssrt = nth_rt - avg_ssd
         self.assertAlmostEqual(ssrt, expected_ssrt, places=2)
 
@@ -91,7 +91,7 @@ class TestComputeSSRT(unittest.TestCase):
         p_respond = 1
         nth_index = int(np.rint(p_respond * 2)) - 1 #index 1
         sorted_go_rts = pd.Series([250, 300]).sort_values()
-        nth_rt = sorted_go_rts.iloc[1]
+        nth_rt = sorted_go_rts.iloc[nth_index]
         expected_ssrt = nth_rt - avg_ssd
         self.assertAlmostEqual(ssrt, expected_ssrt, places=2)
 
